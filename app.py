@@ -1,13 +1,4 @@
-import gdown
 
-@st.cache_resource
-def load_model():
-    model_path = "mobilenet_best.h5"
-    if not os.path.exists(model_path):
-        with st.spinner("Loading model for the first time..."):
-            url = "https://drive.google.com/file/d/15VYsbRVXCWGj6CAEyquf2AP5FbMyRgPr/view?usp=drive_link"
-            gdown.download(url, model_path, quiet=False)
-    return tf.keras.models.load_model(model_path)
 
 import streamlit as st
 import tensorflow as tf
